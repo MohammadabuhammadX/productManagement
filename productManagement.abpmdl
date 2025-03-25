@@ -1,0 +1,105 @@
+{
+  "template": "app",
+  "imports": {
+    "Volo.Abp.LeptonXLiteTheme": {
+      "version": "4.0.5",
+      "isInstalled": true
+    },
+    "Volo.Abp.Account": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.OpenIddict": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.Identity": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.TenantManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.SettingManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.PermissionManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    },
+    "Volo.Abp.FeatureManagement": {
+      "version": "9.0.4",
+      "isInstalled": true
+    }
+  },
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "productManagement.Application": {
+      "path": "src/productManagement.Application/productManagement.Application.abppkg",
+      "folder": "src"
+    },
+    "productManagement.Application.Tests": {
+      "path": "test/productManagement.Application.Tests/productManagement.Application.Tests.abppkg",
+      "folder": "test"
+    },
+    "productManagement.Domain.Shared": {
+      "path": "src/productManagement.Domain.Shared/productManagement.Domain.Shared.abppkg",
+      "folder": "src"
+    },
+    "productManagement.Application.Contracts": {
+      "path": "src/productManagement.Application.Contracts/productManagement.Application.Contracts.abppkg",
+      "folder": "src"
+    },
+    "productManagement.HttpApi": {
+      "path": "src/productManagement.HttpApi/productManagement.HttpApi.abppkg",
+      "folder": "src"
+    },
+    "productManagement.HttpApi.Client": {
+      "path": "src/productManagement.HttpApi.Client/productManagement.HttpApi.Client.abppkg",
+      "folder": "src"
+    },
+    "productManagement.Web": {
+      "path": "src/productManagement.Web/productManagement.Web.abppkg",
+      "folder": "src"
+    },
+    "productManagement.Web.Tests": {
+      "path": "test/productManagement.Web.Tests/productManagement.Web.Tests.abppkg",
+      "folder": "test"
+    },
+    "productManagement.EntityFrameworkCore.Tests": {
+      "path": "test/productManagement.EntityFrameworkCore.Tests/productManagement.EntityFrameworkCore.Tests.abppkg",
+      "folder": "test"
+    },
+    "productManagement.EntityFrameworkCore": {
+      "path": "src/productManagement.EntityFrameworkCore/productManagement.EntityFrameworkCore.abppkg",
+      "folder": "src"
+    },
+    "productManagement.TestBase": {
+      "path": "test/productManagement.TestBase/productManagement.TestBase.abppkg",
+      "folder": "test"
+    },
+    "productManagement.Domain.Tests": {
+      "path": "test/productManagement.Domain.Tests/productManagement.Domain.Tests.abppkg",
+      "folder": "test"
+    },
+    "productManagement.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/productManagement.HttpApi.Client.ConsoleTestApp/productManagement.HttpApi.Client.ConsoleTestApp.abppkg",
+      "folder": "test"
+    },
+    "productManagement.DbMigrator": {
+      "path": "src/productManagement.DbMigrator/productManagement.DbMigrator.abppkg",
+      "folder": "src"
+    },
+    "productManagement.Domain": {
+      "path": "src/productManagement.Domain/productManagement.Domain.abppkg",
+      "folder": "src"
+    }
+  }
+}

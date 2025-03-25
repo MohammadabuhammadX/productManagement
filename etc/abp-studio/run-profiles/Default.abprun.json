@@ -1,0 +1,13 @@
+﻿{
+  "applications": {
+    "productManagement.Web": {
+      "type": "dotnet-project",
+      "launchUrl": "https://localhost:44386",
+      "path": "../../../src/productManagement.Web/productManagement.Web.csproj",
+      "kubernetesService": ".*-web$",
+      "execution": {
+        "order": 2
+      }
+    }
+  }
+}

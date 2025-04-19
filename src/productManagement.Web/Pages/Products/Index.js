@@ -1,5 +1,5 @@
 ﻿$(function () {
-    var l = abp.localization.getResource('ProductManagement');
+    var l = abp.localization.getResource('productManagement');
     var dataTable = $('#ProductsTable').DataTable(
         abp.libs.datatables.normalizeConfiguration({
             serverSide: true,
@@ -11,14 +11,24 @@
                 productManagement.products.product.getList
             ),
             columnDefs: [
-                { title: l('Name'), data: "name" },
-                { title: l('CategoryName'), data: "categoryName", orderable: false },
-                { title: l('Price'), data: "price" },
+                {
+                    title: l('Name'),
+                    data: "name"
+                },
+                {
+                    title: l('CategoryName'),
+                    data: "categoryName",
+                    orderable: false
+                },
+                {
+                    title: l('Price'),
+                    data: "price"
+                },
                 {
                     title: l('StockState'),
                     data: "stockState",
                     render: function (data) {
-                        return l('Enum:StockState:' + data);
+                        return l('Enum:ProductStockState:' + data); 
                     }
                 },
                 {

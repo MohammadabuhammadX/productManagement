@@ -50,7 +50,7 @@ namespace productManagement.Data
                 Price = 349,
                 IsFreeCargo = true,
                 ReleaseDate = new DateTime(2022, 02, 01),
-                StockState = ProductStockState.Preorder
+                StockState = ProductStockState.PreOrder
             };
             var printer1 = new Product
             {

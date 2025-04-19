@@ -7,11 +7,19 @@
 {
     <abp-script src="/Pages/Products/Index.js" />
 }
-<abp-card>
-    <abp-card-header>
-        <h2>@L["Menu:Products"]</h2>
+
+<abp-card class="rounded shadow-sm">
+    <abp-card-header class="py-3">
+        <abp-row>
+            <abp-column size="_9">
+                <abp-card-title class="h4 mb-0 text-dark">@L["Menu:Products"]</abp-card-title>
+            </abp-column>
+        </abp-row>
     </abp-card-header>
-    <abp-card-body>
-        <abp-table id="ProductsTable" striped-rows="true" />
+    <abp-card-body class="pb-3">
+        <abp-table id="ProductsTable"
+                   striped-rows="true"
+                   class="table-borderless nowrap hoverable-rows rounded data-table">
+        </abp-table>
     </abp-card-body>
 </abp-card>

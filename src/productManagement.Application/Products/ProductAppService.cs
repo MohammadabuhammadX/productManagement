@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 using System.Linq.Dynamic.Core;
+using productManagement.Categoies;
 
 
 namespace productManagement.Products
@@ -14,11 +15,30 @@ namespace productManagement.Products
     public class ProductAppService : productManagementAppService, IProductAppService
     {
         private readonly IRepository<Product, Guid> _productRepository;
+        private readonly IRepository<Category , Guid> _categoryRepository;
         public ProductAppService(
-            IRepository<Product, Guid> productRepository)
+            IRepository<Product, Guid> productRepository,
+            IRepository<Category, Guid> categoryRepository)
         {
             _productRepository = productRepository;
+            _categoryRepository = categoryRepository;
         }
+
+        public async Task CreateAsync(CreateUpdateProductDto input)
+        {
+            await _productRepository.InsertAsync(
+                ObjectMapper.Map<CreateUpdateProductDto, Product>(input)
+                );
+        }
+
+        public async Task<ListResultDto<CategoryLookupDto>> GetCategoriesAsync()
+        {
+            var categories = await _categoryRepository.GetListAsync();
+
+            return new ListResultDto<CategoryLookupDto>(ObjectMapper
+                .Map<List<Category>, List<CategoryLookupDto>>(categories));
+        }
+
         public async Task<PagedResultDto<ProductDto>> GetListAsync(PagedAndSortedResultRequestDto input)
         {
             var queryable = await _productRepository.WithDetailsAsync(x => x.Category);

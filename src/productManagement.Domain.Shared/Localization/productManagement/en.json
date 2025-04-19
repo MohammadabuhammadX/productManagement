@@ -11,11 +11,10 @@
     "CategoryName": "Category name",
     "Price": "Price",
     "StockState": "Stock state",
-    "Enum:StockState:0": "Pre-order",
-    "Enum:StockState:1": "In stock",
-    "Enum:StockState:2": "Not available",
-    "Enum:StockState:3": "Stopped",
+    "Enum:ProductStockState:0": "Pre-order",
+    "Enum:ProductStockState:1": "In stock",
+    "Enum:ProductStockState:2": "Not available",
+    "Enum:ProductStockState:3": "Stopped",
     "CreationTime": "Creation time"
-
   }
 }

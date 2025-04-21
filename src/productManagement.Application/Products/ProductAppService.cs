@@ -32,6 +32,11 @@ namespace productManagement.Products
                 );
         }
 
+        public async Task DeleteAsync(Guid id)
+        {
+            await _productRepository.DeleteAsync( id );
+        }
+
         public async Task<ProductDto> GetAsync(Guid id)
         {
             return ObjectMapper.Map<Product, ProductDto>(

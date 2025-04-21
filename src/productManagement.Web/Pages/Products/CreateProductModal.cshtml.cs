@@ -1,11 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using productManagement.Products;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel;
-using System;
 using System.Threading.Tasks;
-using Volo.Abp.AspNetCore.Mvc.UI.Bootstrap.TagHelpers.Form;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using productManagement.Dtos;
@@ -44,19 +40,5 @@ namespace productManagement.Web.Pages.Products
                 .Map<CreateEditProductViewModel, CreateUpdateProductDto>(Product));
             return NoContent();
         }
-    }
-    public class CreateEditProductViewModel
-    {
-        [SelectItems("Categories")]
-        [DisplayName("Category")]
-        public Guid CategoryId { get; set; }
-        [Required]
-        [StringLength(ProductConsts.MaxNameLength)]
-        public string Name { get; set; }
-        public float Price { get; set; }
-        public bool IsFreeCargo { get; set; }
-        [DataType(DataType.Date)]
-        public DateTime ReleaseDate { get; set; }
-        public ProductStockState StockState { get; set; }
     }
 }

@@ -9,10 +9,16 @@
 }
 
 <abp-card class="rounded shadow-sm">
-    <abp-card-header class="py-3">
+    <abp-card-header>
         <abp-row>
-            <abp-column size="_9">
-                <abp-card-title class="h4 mb-0 text-dark">@L["Menu:Products"]</abp-card-title>
+            <abp-column size-md="_6">
+                <abp-card-title>@L["Menu:Products"]</abp-card-title>
+            </abp-column>
+            <abp-column size-md="_6" class="text-end">
+                <abp-button id="NewProductButton"
+                            text="@L["NewProduct"].Value"
+                            icon="plus"
+                            button-type="Primary" />
             </abp-column>
         </abp-row>
     </abp-card-header>

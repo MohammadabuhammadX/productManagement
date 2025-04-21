@@ -8,6 +8,7 @@ using Volo.Abp.Application.Dtos;
 using Volo.Abp.Domain.Repositories;
 using System.Linq.Dynamic.Core;
 using productManagement.Categoies;
+using Volo.Abp.Account;
 
 
 namespace productManagement.Products
@@ -28,6 +29,13 @@ namespace productManagement.Products
         {
             await _productRepository.InsertAsync(
                 ObjectMapper.Map<CreateUpdateProductDto, Product>(input)
+                );
+        }
+
+        public async Task<ProductDto> GetAsync(Guid id)
+        {
+            return ObjectMapper.Map<Product, ProductDto>(
+                await _productRepository.GetAsync(id)
                 );
         }
 
@@ -52,6 +60,12 @@ namespace productManagement.Products
             var products = await AsyncExecuter.ToListAsync(queryable);
             var count = await _productRepository.GetCountAsync();
             return new PagedResultDto<ProductDto>(count,ObjectMapper.Map<List<Product>, List<ProductDto>>(products));
+        }
+
+        public async Task UpdateAsync(Guid id, CreateUpdateProductDto input)
+        {
+            var product = await _productRepository.GetAsync(id);
+            ObjectMapper.Map(input, product);
         }
     }
 }
